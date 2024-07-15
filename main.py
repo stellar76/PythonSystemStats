@@ -4,6 +4,8 @@ import time
 import math
 import psutil
 from flask import Flask, json
+from flask_cors import CORS
+
 
 def get_Os():
     return {
@@ -57,6 +59,7 @@ def get_Up():
 
 
 stats = Flask(__name__)
+cors = CORS(stats, resources={r"/stats/*": {"origins": "*"}})
 
 @stats.route('/stats', methods=['GET'])
 def get_Stats():
