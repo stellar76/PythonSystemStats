@@ -6,7 +6,6 @@ import psutil
 from flask import Flask, json
 from flask_cors import CORS
 
-
 def get_Os():
     return {
         "kernal":  os.uname().release,
